@@ -60,5 +60,30 @@ Django python WEB开发项目
   1. 模板可直接使用对象及对象的"."操作
   2. {{article.title}}
 
+## Admin
+* Admin
+  1. Admin是Django自带的一个功能强大的自动化数据管理界面
+  2. 被授权的用户可直接在Admin中管理数据库
+  3. Django提供了许多针对Admin的定制功能
+
+* 配置Admin
+
+* 创建用户
+  1. python manage.py createsuperuser创建超级用户
+  2. localhost:8000/admin/ Admin入口
+  3. 汉化 修改settings.py中LANGUAGE_CODE= 'zh_Hans'
+
+* 配置应用
+  1. 在应用下admin.py中引入自身的models模块（或里面的模型类）
+  2. 编辑admin.py: admin.site.register(models.Article)
+
+* 修改数据
+  1. 点击Article超链接进入Article列表页面
+
+* 修改数据默认名车
+  1. 在Article类下添加一个方法
+  2. 根据Python版本选择_str_(self)或_unicode_(self)
+  3. return self.title
+
 
 

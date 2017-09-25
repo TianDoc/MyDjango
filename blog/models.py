@@ -6,3 +6,10 @@ from django.db import models
 class Article(models.Model):
     title = models.CharField(max_length=32, default='TITLE')
     content = models.TextField(null=True)
+    # 无效
+    # def __unicode__(self):
+    #     return self.title
+
+    # 有效
+    def __str__(self):
+        return self.title
