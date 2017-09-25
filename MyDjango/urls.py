@@ -13,18 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
-# from django.contrib import admin
+
+# URL配置文件
+# Django项目中所有地址（页面）都需要我们自己去配置其URL
 # 该 Django 项目的 URL 声明; 一份由 Django 驱动的网站"目录"
-# urlpatterns = [
-#     url(r'^admin/', admin.site.urls),
-# ]
+# 引入include函数 将其他模块的urls文件
+from django.conf.urls import url , include
+from django.contrib import admin
 
 from . import view
-
-# urlpatterns = [
-#     url(r'^$', view.hello),
-# ]
 
 urlpatterns = [
     # url() 函数
@@ -35,5 +32,7 @@ urlpatterns = [
     # view: 用于执行与正则表达式匹配的 URL 请求。
     # kwargs: 视图使用的字典类型的参数。
     # name: 用来反向获取 URL。
+    # url(r'^$', view.hello),
     url(r'^hello$', view.hello),
+    url(r'^blog/', include('blog.urls'))
 ]

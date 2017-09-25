@@ -11,6 +11,7 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
+# Python服务器网关接口 python应用与web服务器之间的接口。
 # 一个 WSGI 兼容的 Web 服务器的入口，以便运行你的项目。
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "MyDjango.settings")
 

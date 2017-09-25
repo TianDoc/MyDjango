@@ -13,22 +13,28 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 
 # 该 Django 项目的设置/配置。
+
+
+# 这个变量指的是项目的根目录
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
+# 安全码 项目启动必须使用
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '1na^96uy@3p%dth^7a9*da-)q0jurssaz)&&@w@6%3)8iziu--'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# 如果添加地址 Django就只允许外界通过此地址访问
 ALLOWED_HOSTS = []
 
 # Application definition
-
+# 原装的应用
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -36,8 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog'
 ]
-
+# 中间件  工具集 不用管
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -47,9 +54,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+# URL的根配置文件 指向urls.py
 ROOT_URLCONF = 'MyDjango.urls'
-
+# 模板：HTML文件
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -67,12 +74,12 @@ TEMPLATES = [
         },
     },
 ]
-
+# 全局设置不用管
 WSGI_APPLICATION = 'MyDjango.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-
+# 数据库链接配置
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -82,7 +89,7 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
-
+# 密码认证 不用管
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -97,12 +104,12 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+# 国际化
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
+#时区
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -113,5 +120,5 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
+# 静态文件的地址
 STATIC_URL = '/static/'
