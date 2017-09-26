@@ -34,5 +34,5 @@ urlpatterns = [
     # name: 用来反向获取 URL。
     url(r'^admin/', admin.site.urls),
     url(r'^hello$', view.hello),
-    url(r'^blog/', include('blog.urls'))
+    url(r'^blog/', include('blog.urls', namespace='blog'))
 ]

@@ -85,5 +85,28 @@ Django python WEB开发项目
   2. 根据Python版本选择_str_(self)或_unicode_(self)
   3. return self.title
 
+* 页面for循环： <br>
+
+        {% for xx in xxs %}
+        HTML语句
+        {% endfor %}
+
+
+* URL传递参数：
+  1. 参数写在响应函数中request后，可以有默认值
+  2. URL正则表达式：r'^article/(?P<article_id>[0-9]+)/$'
+  3. URL正则中的组名必须和参数名一致
+
+* Template超链接配置
+  1. template中可以用"{%url 'app_name:url_name' param%}"
+  2. 其中app_name 和 url_name 都在url中配置的
+
+* url函数的名称参数
+  1. 根urls,写在include()的第二个参数位置，namespace = 'blog'
+  2. 应用下则写在url()的第三个参数位置， name= 'article'
+  3. 主要取决于是否使用了include引用了另一个url配置文件
+
+
+
 
 
