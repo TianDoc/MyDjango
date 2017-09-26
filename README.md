@@ -125,6 +125,34 @@ Django python WEB开发项目
   1. {{value | filter}}
   2. 过滤器可以叠加{{value | filter1|filter2}}
 
+## Django Shell
+* 它是一个Python的交互式命令行程序
+* 自动引入我们的项目环境
+* 我们可以使用它和我 们项目交互
+
+* Django Shell
+  1. python manage.py shell
+  2. from blog.models import Article
+  3. Article.objects.all()
+
+* Django Shell用途
+  1. 进行调试工作
+  2. 测试未知的方法
+
+## 增强Admin
+* 修改后台配置
+  1. 在admin.py中,创建admin配置类 <br>
+     class ArticleAdmin(admin.ModelAdmin)
+  2. 注册：admin.site.register(Article,ArticleAdmin)
+
+* 显示其他字段
+  1. list_display = ('title', 'content')
+  2. list_display同时支持tuple和list
+
+
+
+
+
 
 
 
