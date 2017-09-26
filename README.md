@@ -106,6 +106,27 @@ Django python WEB开发项目
   2. 应用下则写在url()的第三个参数位置， name= 'article'
   3. 主要取决于是否使用了include引用了另一个url配置文件
 
+* 编写响应函数
+  1. 使用request.POST['参数名']获取表单数据
+  2. models.Article.objects.create(title,content)创建对象
+  3. 使用POST提交表单页面必须在html页面中添加{% csrf_token %}
+
+* 修改数据：
+  1. article.title =  title
+  2. article.save()
+
+
+## Templates过滤器
+* 什么是过滤器：
+  1. 写在模板中的，属于Django的模板语言
+  2. 可以修改模板中的变量，从显示不同的内容
+
+* 如何使用过滤器
+  1. {{value | filter}}
+  2. 过滤器可以叠加{{value | filter1|filter2}}
+
+
+
 
 
 
